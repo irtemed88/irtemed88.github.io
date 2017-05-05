@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>demidev</title>
+    <link>http://demidev.com/</link>
+    <description>Recent content on demidev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>demidev, LLC</copyright>
+    <lastBuildDate>Thu, 04 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://demidev.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>http://demidev.com/about/</link>
+      <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://demidev.com/about/</guid>
+      <description>Hey y&amp;rsquo;all! I&amp;rsquo;m Demetri Miller and I run demidev.
+Like everyone else, you&amp;rsquo;re probably wondering what &amp;ldquo;demidev&amp;rdquo; means. Demidev is an amalgamation of several of my more defining traits. By nationality I&amp;rsquo;m half Greek (demi), love software development, and well, &amp;ldquo;demi&amp;rdquo; is like a shortening of my first name. The logo design is a modified Greek key made to look like two capital Ds (&amp;ldquo;ooooh, now I get it&amp;rdquo;). Totally makes sense, right?</description>
+    </item>
+    
+    <item>
+      <title>Smartway for iOS</title>
+      <link>http://demidev.com/smartway/</link>
+      <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://demidev.com/smartway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pitch Detection in iOS 4.x</title>
+      <link>http://demidev.com/blog/pitch-detection-in-ios-4.x/</link>
+      <pubDate>Thu, 29 Sep 2011 04:40:48 +0000</pubDate>
+      
+      <guid>http://demidev.com/blog/pitch-detection-in-ios-4.x/</guid>
+      <description>Before getting started This is a post I made back on the website I had while in college. That site has since been abandoned (sorry about that), but since I&amp;rsquo;ve started a new one I thought I&amp;rsquo;d import this here for legacy purposes. There are other open source pitch detection projects out there now using more modern language constructs and I&amp;rsquo;d recommend checking those out before this.
+Pitch detection is a relatively common thing to do in the audio realm.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://demidev.com/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://demidev.com/projects/</guid>
+      <description>Unfortunately most of the projects I&amp;rsquo;ve worked on recently can&amp;rsquo;t be discussed publicly, but here are a few I&amp;rsquo;ve built recently in my spare time.
+Smartway TN A native iOS mobile interface to TDOT&amp;rsquo;s interstate traffic cameras. Getting ready to release this to the App Store at which point I&amp;rsquo;ll have more to say. For now you&amp;rsquo;ll just have to take my word for it 😁.
+DxPrep A study tool built to assist those in the field of dermatology pathology prepare for qualification exams.</description>
+    </item>
+    
+  </channel>
+</rss>

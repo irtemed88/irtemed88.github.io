@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on demidev</title>
+    <link>http://demidev.com/categories/mobile/</link>
+    <description>Recent content in Mobile on demidev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>demidev, LLC</copyright>
+    <lastBuildDate>Thu, 04 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://demidev.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Smartway for iOS</title>
+      <link>http://demidev.com/smartway/</link>
+      <pubDate>Thu, 04 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://demidev.com/smartway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pitch Detection in iOS 4.x</title>
+      <link>http://demidev.com/blog/pitch-detection-in-ios-4.x/</link>
+      <pubDate>Thu, 29 Sep 2011 04:40:48 +0000</pubDate>
+      
+      <guid>http://demidev.com/blog/pitch-detection-in-ios-4.x/</guid>
+      <description>Before getting started This is a post I made back on the website I had while in college. That site has since been abandoned (sorry about that), but since I&amp;rsquo;ve started a new one I thought I&amp;rsquo;d import this here for legacy purposes. There are other open source pitch detection projects out there now using more modern language constructs and I&amp;rsquo;d recommend checking those out before this.
+Pitch detection is a relatively common thing to do in the audio realm.</description>
+    </item>
+    
+  </channel>
+</rss>

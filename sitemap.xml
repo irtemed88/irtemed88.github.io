@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://demidev.com/about/</loc>
+    <lastmod>2017-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/smartway/</loc>
+    <lastmod>2017-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/blog/pitch-detection-in-ios-4.x/</loc>
+    <lastmod>2011-09-29T04:40:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/blog/</loc>
+    <lastmod>2011-09-29T04:40:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/categories/ios/</loc>
+    <lastmod>2017-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/categories/mobile/</loc>
+    <lastmod>2017-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/categories/signal-processing/</loc>
+    <lastmod>2011-09-29T04:40:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/</loc>
+    <lastmod>2017-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
