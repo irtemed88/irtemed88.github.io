@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-05-04T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-05-24T10:27:16-05:00"/>
 
 
 
@@ -197,6 +197,10 @@
 
                 
                     <li>
+                        <a href="http://demidev.com/blog/smartway-for-ios-is-live/"><p>Smartway for iOS is live</p></a>
+                    </li>
+                
+                    <li>
                         <a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/"><p>Pitch Detection in iOS 4.x</p></a>
                     </li>
                 
@@ -214,10 +218,10 @@
     <header>
     <div class="title">
         
-            <h2><a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/">Pitch Detection in iOS 4.x</a></h2>
+            <h2><a href="http://demidev.com/blog/smartway-for-ios-is-live/">Smartway for iOS is live</a></h2>
         
         
-            <p>Learn how to perform basic pitch detection on iOS 4.x</p>
+            <p>View TDOT&#39;s live traffic camera feeds on your mobile evice</p>
         
     </div>
     <div class="meta">
@@ -226,11 +230,11 @@
         
 
         <time class="published"
-            datetime='2011-09-29'>
-            September 29, 2011</time>
+            datetime='2017-05-24'>
+            May 24, 2017</time>
         <span class="author">Demetri Miller</span>
         
-            <p>9 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -243,262 +247,32 @@
     <div id="content">
         
 
-<h3 id="before-getting-started">Before getting started</h3>
+<h3 id="app-store-link">App Store Link</h3>
 
-<p>This is a post I made back on the website I had while in college. That site has since been abandoned (sorry about that), but since I&rsquo;ve started a new one I thought I&rsquo;d import this here for legacy purposes. There are other open source pitch detection projects out there now using more modern language constructs and I&rsquo;d recommend checking those out before this.</p>
-
-<hr />
-
-<p>Pitch detection is a relatively common thing to do in the audio realm. After scouring the web I found a lot of useful Core Audio resources, but nothing directly related to pitch detection. In my searching I also found others who seemed to be looking for a way to do this. I decided to write a little app which demonstrates how pitch detection can be accomplished in iOS.</p>
-
-<p>This is my first real tutorial so feedback is greatly appreciated. If you find this tutorial useful, let me know!</p>
-
-<p>Cheers,</p>
-
-<p>Demetri</p>
+<p>Just want the download link? Here ya go:
+<a href="https://itunes.apple.com/us/app/smartwaytn/id1131107222">https://itunes.apple.com/us/app/smartwaytn/id1131107222</a></p>
 
 <hr />
 
-<p>A few things before we get started:</p>
+<h3 id="backstory">Backstory</h3>
+
+<p>As a native Nashvillian, it&rsquo;s been a wild ride watching the city change. Nashville&rsquo;s population is <a href="http://www.tennessean.com/story/news/2017/03/28/new-data-nashville-region-still-growing-100-people-day/99733098/">growing by about 100 people a day</a>!</p>
+
+<p>With all these people has also come an increased load on the city&rsquo;s transportation infrastructure. When I was commuting to work every day I found myself getting stuck in traffic multiple times a week due to wrecks, stalled vehicles, or events in town. Google does a pretty good job with the traffic overlay on their maps app, but I found sometimes the information wasn&rsquo;t as up to date or as granular as I wanted. For a while now TDOT has provided cameras to view traffic, but until recently they were only stills that updated periodically (I think it was like once every 15 seconds or something).</p>
+
+<p>With TDOT&rsquo;s latest update the traffic cameras now support live streaming! I was so pumped the day I discovered they added that feature. The initial implementation of their desktop experience wasn&rsquo;t bad, but for someone going to the site every day to check the same subset of cameras it lacked some necessary features. I filed feature requests, but after 6 months of not seeing any changes I decided to build a mobile client for my personal use since the mobile web experience had become mildly infuriating.</p>
+
+<p>Like most software projects there were a few gotchas along the way (I&rsquo;ll probably chronicle those at some point in the future), but for the most part development was straightforward. Some of the features I knew I wanted were:</p>
 
 <ul>
-<li>I&rsquo;m assuming readers are somewhat familiar with Xcode and iOS development. If you are just learning the ropes, this tutorial may not be the best place to start. Apple has plenty of resources on their <a href="http://developer.apple.com/devcenter/ios/index.action">developer&rsquo;s website</a> to get started.</li>
-<li>You need iOS 4.0 or higher to use this application because I use the new iOS Accelerate framework&rsquo;s FFT functions for frequency analysis. You can download the latest SDK from Apple&rsquo;s iOS Dev Center.</li>
-<li>To keep the tutorial size from exploding, I&rsquo;ve skimmed over some of the CoreAudio details and tried to focus on the pitch detection piece. If there is confusion with my code, let me know and I&rsquo;ll elaborate.</li>
-<li>I have stripped out some functionality of the app for clarity&rsquo;s sake. I tried to remove most references to old code/comments though it&rsquo;s possible I may have missed a few references.</li>
-<li>Finally, I couldn&rsquo;t have completed this app without the help from Michael Tyson&rsquo;s post on RemoteI/O. If you want a better understanding of different parts of Core Audio, I highly recommend checking out his blog post on the topic: <a href="http://atastypixel.com/blog/using-remoteio-audio-unit">http://atastypixel.com/blog/using-remoteio-audio-unit</a></li>
-<li><strong>Disclaimer 1:</strong> I know I glazed over <em>a lot</em> of details for the signal analysis portion of this application. It was never my intention for this tutorial to be the &ldquo;end-all be-all&rdquo; for signal analysis and pitch detection, but rather a foothold for those who want to learn to get started.</li>
-<li><strong>Disclaimer 2:</strong> This application is a good proof of concept but if you are planning on writing a tuner application for the iPhone and releasing it to the public, you&rsquo;ll want to refine your frequency analysis algorithm (among other things).</li>
+<li>The app saving wherever you are looking on the map so the next time you open it you don&rsquo;t have to find your location again.</li>
+<li>Quickly being able to go from cold launch of the app to viewing cameras.</li>
+<li>The app has a &ldquo;favorites&rdquo; feature to save cameras you&rsquo;re most interested in. Great feature for daily commuters. They can be viewed in list format so you don&rsquo;t have to click each camera individually like you do on the web.</li>
 </ul>
 
-<hr />
+<p>I never planned on making the app public. I did the bare minimum (design and feature-wise) to satisfy my needs. After showing a few friends though I received a lot of postiive feedback and others asking me if it was on the store. I figured I may as well polish it up and put it out there for others to use.</p>
 
-<p><strong>EDIT: I&rsquo;ve moved PitchDetector to github and also fixed a bug that is reproducible only on the device. Follow the link below to download/checkout the source code.</strong></p>
-
-<p><strong>Note:</strong> Below is a link to the source code on github.com. The code is commented generously. If you have questions, let me know in the comments and I&rsquo;ll elaborate as soon as possible.</p>
-
-<hr />
-
-<p><a href="https://github.com/irtemed88/PitchDetector">Click here to view PitchDetector project page</a></p>
-
-<h3 id="pitch-detector">Pitch Detector</h3>
-
-<ul>
-<li>Application overview: The application uses the CoreAudio Remote I/O API to sample and analyze input signals from an iOS devices microphone. The resulting frequency is then displayed on screen.</li>
-<li>I&rsquo;ll be walking through the Pitch Detector application lifecycle from the point a user clicks the &ldquo;Begin Listening&rdquo; button. Elaborating on certain pieces of the application as they are encountered.<br /></li>
-</ul>
-
-<p>Now without further ado&hellip;</p>
-
-<h3 id="listener-controls">Listener Controls</h3>
-
-<p>The &ldquo;Begin Listening&rdquo; button is linked to a toggle method which starts and stops the listener (In this context, listener is an entity which <em>listens</em> for audio signals).</p>
-
-<p>Below is the startListener method (see ListenerViewController - [line 37]):</p>
-
-<pre><code class="language-objective-c">- (void)startListener {
-    [rioRef startListening:self];
-}
-
-</code></pre>
-
-<p>rioRef is ListenerViewController&rsquo;s reference to RIOInterface (see ListenerViewController.h). RIOInterface (read: Remote I/O interface) is the bread and butter of this application. All the CoreAudio components needed are contained within this class. RIOInterface is singleton class since we will only ever be dealing with a single Remote I/O Audio Unit&hellip;more on that later.</p>
-
-<h3 id="riointerface-mm">RIOInterface.mm</h3>
-
-<p>Let&rsquo;s look at RIOInterface&rsquo;s  <em>- (void)startListening:(ListenerViewController*)aListener</em> method (RIOInterface.mm - [line 62]):</p>
-
-<pre><code class="language-objective-c">- (void)startListening:(ListenerViewController*)aListener {
-	self.listener = aListener;
-	[self createAUProcessingGraph];
-	[self initializeAndStartProcessingGraph];
-}
-</code></pre>
-
-<p>The two important methods here are <em>[self createAUProcessingGraph]</em> and <em>[self initializeAndStartProcessingGraph]</em>. Let&rsquo;s discuss the former first (RIOInterface.mm - [line 240]):</p>
-
-<pre><code class="language-objective-c">- (void)createAUProcessingGraph {
-	OSStatus err;
-
-	AudioComponentDescription ioUnitDescription;
-	ioUnitDescription.componentType = kAudioUnitType_Output;
-	ioUnitDescription.componentSubType = kAudioUnitSubType_RemoteIO;
-	ioUnitDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
-	ioUnitDescription.componentFlags = 0;
-	ioUnitDescription.componentFlagsMask = 0;
-
-	// Declare and instantiate an audio processing graph
-	NewAUGraph(&amp;amp;processingGraph);
-
-	// Add an audio unit node to the graph, then instantiate the audio unit.
-	AUNode ioNode;
-	AUGraphAddNode(processingGraph, &amp;amp;ioUnitDescription, &amp;amp;ioNode);
-
-	AUGraphOpen(processingGraph); // indirectly performs audio unit instantiation
-
-	// Obtain a reference to the newly-instantiated I/O unit. Each Audio Unit
-	// requires its own configuration.
-	AUGraphNodeInfo(processingGraph, ioNode, NULL, &amp;amp;ioUnit);
-
-	// Initialize below.
-	AURenderCallbackStruct callbackStruct = {0};
-	UInt32 enableInput;
-	UInt32 enableOutput;
-
-	// Enable input and disable output.
-	enableInput = 1; enableOutput = 0;
-	callbackStruct.inputProc = RenderFFTCallback;
-	callbackStruct.inputProcRefCon = self;
-
-	err = AudioUnitSetProperty(ioUnit, kAudioOutputUnitProperty_EnableIO,
-							   kAudioUnitScope_Input,
-							   kInputBus, &amp;amp;enableInput, sizeof(enableInput));
-
-	err = AudioUnitSetProperty(ioUnit, kAudioOutputUnitProperty_EnableIO,
-							   kAudioUnitScope_Output,
-							   kOutputBus, &amp;amp;enableOutput, sizeof(enableOutput));
-
-	err = AudioUnitSetProperty(ioUnit, kAudioOutputUnitProperty_SetInputCallback,
-							   kAudioUnitScope_Input,
-							   kOutputBus, &amp;amp;callbackStruct, sizeof(callbackStruct));
-
-	// Set the stream format.
-	size_t bytesPerSample =[self ASBDForSoundMode];
-
-	err = AudioUnitSetProperty(ioUnit, kAudioUnitProperty_StreamFormat,
-							   kAudioUnitScope_Output,
-							   kInputBus, &amp;amp;streamFormat, sizeof(streamFormat));
-
-	err = AudioUnitSetProperty(ioUnit, kAudioUnitProperty_StreamFormat,
-							   kAudioUnitScope_Input,
-							   kOutputBus, &amp;amp;streamFormat, sizeof(streamFormat));
-
-	// Disable system buffer allocation. We'll do it ourselves.
-	UInt32 flag = 0;
-	err = AudioUnitSetProperty(ioUnit, kAudioUnitProperty_ShouldAllocateBuffer,
-								  kAudioUnitScope_Output,
-								  kInputBus, &amp;amp;flag, sizeof(flag));
-
-	// Allocate AudioBuffers for use when listening.
-	// TODO: Move into initialization...should only be required once.
-	bufferList = (AudioBufferList *)malloc(sizeof(AudioBuffer));
-	bufferList-&amp;gt;mNumberBuffers = 1;
-	bufferList-&amp;gt;mBuffers[0].mNumberChannels = 1;
-
-	bufferList-&amp;gt;mBuffers[0].mDataByteSize = 512*bytesPerSample;
-	bufferList-&amp;gt;mBuffers[0].mData = calloc(512, bytesPerSample);
-}
-</code></pre>
-
-<p>Some of the comments have been removed for conciseness. Just know this method builds the AUGraph, instantiates the Remote I/O node, and specifies all the different properties needed for input to occur (e.g. enabling input, stream type, sample rate, etc). Anyone who has done work with Core Audio knows setting these properties correctly is half the battle and can cause lots of headache if done incorrectly.</p>
-
-<p>Note the input data grabbed from the microphone is represented by a Singed 16-bit integers in LinearPCM format. Initially I was using the 8.24 fixed-point format specified in the documentation, which lead to many many hours of debugging other parts of my code :)</p>
-
-<h3 id="audio-processing">Audio Processing</h3>
-
-<p>Once we&rsquo;ve set up all the components, we need to tell them to start! This happens in the second method we mentioned above</p>
-
-<p>(RIOInterface.mm - [line 75])</p>
-
-<pre><code class="language-objective-c">- (void)initializeAndStartProcessingGraph
-</code></pre>
-
-<p>This method calls <em>AUGraphStart(processingGraph)</em> which tells the device to begin sampling audio signals and passing them to the callback function we declared when setting up the AUGraph.</p>
-
-<p>Now it&rsquo;s time for the good stuff! When the device has a set of audio data to give us, it calls OSStatus RenderFFTCallback(&hellip;) (RIOInterface.mm - [line 90]):</p>
-
-<pre><code class="language-objective-c">OSStatus RenderFFTCallback (void					*inRefCon,
-					   AudioUnitRenderActionFlags 	*ioActionFlags,
-					   const AudioTimeStamp			*inTimeStamp,
-					   UInt32 						inBusNumber,
-					   UInt32 						inNumberFrames,
-					   AudioBufferList				*ioData)
-{
-	RIOInterface* THIS = (RIOInterface *)inRefCon;
-	COMPLEX_SPLIT A = THIS-&amp;gt;A;
-	void *dataBuffer = THIS-&amp;gt;dataBuffer;
-	float *outputBuffer = THIS-&amp;gt;outputBuffer;
-	FFTSetup fftSetup = THIS-&amp;gt;fftSetup;
-
-	uint32_t log2n = THIS-&amp;gt;log2n;
-	uint32_t n = THIS-&amp;gt;n;
-	uint32_t nOver2 = THIS-&amp;gt;nOver2;
-	uint32_t stride = 1;
-	int bufferCapacity = THIS-&amp;gt;bufferCapacity;
-	SInt16 index = THIS-&amp;gt;index;
-
-	AudioUnit rioUnit = THIS-&amp;gt;ioUnit;
-	OSStatus renderErr;
-	UInt32 bus1 = 1;
-
-	renderErr = AudioUnitRender(rioUnit, ioActionFlags,
-								inTimeStamp, bus1, inNumberFrames, THIS-&amp;gt;bufferList);
-	if (renderErr &amp;lt; 0) { 		return renderErr; 	} 	 	// Fill the buffer with our sampled data. If we fill our buffer, run the 	// fft. 	int read = bufferCapacity - index; 	if (read &amp;gt; inNumberFrames) {
-		memcpy((SInt16 *)dataBuffer + index, THIS-&amp;gt;bufferList-&amp;gt;mBuffers[0].mData, inNumberFrames*sizeof(SInt16));
-		THIS-&amp;gt;index += inNumberFrames;
-	} else {
-		// If we enter this conditional, our buffer will be filled and we should
-		// perform the FFT.
-		memcpy((SInt16 *)dataBuffer + index, THIS-&amp;gt;bufferList-&amp;gt;mBuffers[0].mData, read*sizeof(SInt16));
-
-		// Reset the index.
-		THIS-&amp;gt;index = 0;
-
-		/*************** FFT ***************/
-		// We want to deal with only floating point values here.
-		ConvertInt16ToFloat(THIS, dataBuffer, outputBuffer, bufferCapacity);
-
-		/**
-		 Look at the real signal as an interleaved complex vector by casting it.
-		 Then call the transformation function vDSP_ctoz to get a split complex
-		 vector, which for a real signal, divides into an even-odd configuration.
-		 */
-		vDSP_ctoz((COMPLEX*)outputBuffer, 2, &amp;amp;A, 1, nOver2);
-
-		// Carry out a Forward FFT transform.
-		vDSP_fft_zrip(fftSetup, &amp;amp;A, stride, log2n, FFT_FORWARD);
-
-		// The output signal is now in a split real form. Use the vDSP_ztoc to get
-		// a split real vector.
-		vDSP_ztoc(&amp;amp;A, 1, (COMPLEX *)outputBuffer, 2, nOver2);
-
-		// Determine the dominant frequency by taking the magnitude squared and
-		// saving the bin which it resides in.
-		float dominantFrequency = 0;
-		int bin = -1;
-		for (int i=0; i dominantFrequency) {
-				dominantFrequency = curFreq;
-				bin = (i+1)/2;
-			}
-		}
-		memset(outputBuffer, 0, n*sizeof(SInt16));
-
-		// Update the UI with our newly acquired frequency value.
-		[THIS-&amp;gt;listener frequencyChangedWithValue:bin*(THIS-&amp;gt;sampleRate/bufferCapacity)];
-		printf(&quot;Dominant frequency: %f   bin: %d n&quot;, bin*(THIS-&amp;gt;sampleRate/bufferCapacity), bin);
-	}
-
-	return noErr;
-}
-</code></pre>
-
-<p>In case you didn&rsquo;t recognize already, this is a C function. The first parameter is a pointer to the Objective-C class that we then cast in order to get references to the class members. After all variables have been set up, we then call:</p>
-
-<pre><code class="language-objective-c">renderErr = AudioUnitRender(rioUnit, ioActionFlags,
-								inTimeStamp, bus1, inNumberFrames, THIS-&amp;gt;bufferList);
-</code></pre>
-
-<p>This method &ldquo;Renders&rdquo; sampled audio data from the microphone into bufferList. (Recall we allocated bufferList when we set up the AUGraph earlier).</p>
-
-<p>The next if-else statement copies the buffered data just sampled into a larger buffer (dataBuffer). If dataBuffer is not filled, the callback is finished. When the buffer is filled, we perform the FFT.</p>
-
-<p>The first step in performing the FFT is converting our buffered data into the correct format. After a little bit of setup, we can let the CoreAudio API do this for us. You can take a look at the code yourself in <code>void ConvertInt16ToFloat(...)</code>.</p>
-
-<p>Once our data is in floating point format, we can use the Accelerate Framework Apple released for iOS 4.0. These method calls have been highly optimized by the engineers at Apple. If you want to learn more, there is a video you can download from WWDC 2010 that discusses performance and comparisons to other libraries (e.g FFTW).</p>
-
-<p>The theory behind the FFT is beyond the scope of this tutorial (nor am I the one who should be explaining it), but you should know that when all is said and done, the sampled data will reside in the frequency domain. All that is left is to apply the algorithm of your choosing to the data to get the dominant frequency. As I said beforehand, the algorithm I use is by no means the best, but it gets the job done.</p>
-
-<p>After we have performed our FFT, we clear the buffer and update the UI to show the current frequency. That&rsquo;s it!</p>
+<p>So there you go! The SmartwayTN app is live and I&rsquo;d love to get your feedback. Next up I&rsquo;d love to get an Android version on the store using React Native, but we&rsquo;ll have to wait until I have a bit more time for that.</p>
 
     </div>
 
@@ -528,13 +302,14 @@
     
         <li><a href='/categories/mobile'>mobile</a></li>
     
-        <li><a href='/categories/signal-processing'>signal processing</a></li>
-    
 </ul>
 
     </footer>
 </article>
 <ul class="actions pagination">
+    
+        <li><a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/"
+                class="button big previous">Pitch Detection in iOS 4.x</a></li>
     
 
     
@@ -547,9 +322,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'demidev';
-    var disqus_identifier = 'http:\/\/demidev.com\/blog\/pitch-detection-in-ios-4.x\/';
-    var disqus_title = 'Pitch Detection in iOS 4.x';
-    var disqus_url = 'http:\/\/demidev.com\/blog\/pitch-detection-in-ios-4.x\/';
+    var disqus_identifier = 'http:\/\/demidev.com\/blog\/smartway-for-ios-is-live\/';
+    var disqus_title = 'Smartway for iOS is live';
+    var disqus_url = 'http:\/\/demidev.com\/blog\/smartway-for-ios-is-live\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -573,43 +348,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f&text=Pitch%20Detection%20in%20iOS%204.x&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&text=Smartway%20for%20iOS%20is%20live&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f&title=Pitch%20Detection%20in%20iOS%204.x" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f&title=Pitch%20Detection%20in%20iOS%204.x" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f&title=Pitch%20Detection%20in%20iOS%204.x" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Demetri%20Miller&body=http%3a%2f%2fdemidev.com%2fblog%2fpitch-detection-in-ios-4.x%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Demetri%20Miller&body=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -714,6 +489,20 @@
                     <li>
                         <article>
                             <header>
+                                <h3><a href="http://demidev.com/blog/smartway-for-ios-is-live/">Smartway for iOS is live</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-05-24'>
+                                    May 24, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <h3><a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/">Pitch Detection in iOS 4.x</a></h3>
                                 
                                     
@@ -726,6 +515,16 @@
                     </li>
                 
 
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
                 
             </ul>
         </section>

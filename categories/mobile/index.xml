@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>demidev, LLC</copyright>
-    <lastBuildDate>Thu, 04 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 May 2017 10:27:16 -0500</lastBuildDate>
     
 	<atom:link href="http://demidev.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Smartway for iOS is live</title>
+      <link>http://demidev.com/blog/smartway-for-ios-is-live/</link>
+      <pubDate>Wed, 24 May 2017 10:27:16 -0500</pubDate>
+      
+      <guid>http://demidev.com/blog/smartway-for-ios-is-live/</guid>
+      <description>App Store Link Just want the download link? Here ya go: https://itunes.apple.com/us/app/smartwaytn/id1131107222
+Backstory As a native Nashvillian, it&amp;rsquo;s been a wild ride watching the city change. Nashville&amp;rsquo;s population is growing by about 100 people a day!
+With all these people has also come an increased load on the city&amp;rsquo;s transportation infrastructure. When I was commuting to work every day I found myself getting stuck in traffic multiple times a week due to wrecks, stalled vehicles, or events in town.</description>
+    </item>
     
     <item>
       <title>Smartway for iOS</title>
