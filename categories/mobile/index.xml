@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>demidev, LLC</copyright>
-    <lastBuildDate>Wed, 31 May 2017 01:09:39 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 24 May 2017 10:27:16 -0500</lastBuildDate>
     
 	<atom:link href="http://demidev.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Adding Interative Views to Google Maps on iOS</title>
-      <link>http://demidev.com/blog/adding-interative-views-to-google-maps/</link>
-      <pubDate>Wed, 31 May 2017 01:09:39 -0400</pubDate>
-      
-      <guid>http://demidev.com/blog/adding-interative-views-to-google-maps/</guid>
-      <description>You wouldn&amp;rsquo;t think it&amp;rsquo;d be difficult, but adding an interactive view to Google Maps on iOS has some gotchas. Why? It turns out adding subviews</description>
-    </item>
     
     <item>
       <title>Smartway for iOS is live!</title>
