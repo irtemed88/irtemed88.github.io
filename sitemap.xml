@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://demidev.com/blog/adding-interative-views-to-google-maps/</loc>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://demidev.com/blog/smartway-for-ios-is-live/</loc>
     <lastmod>2017-05-24T10:27:16-05:00</lastmod>
   </url>
@@ -24,7 +29,7 @@
   
   <url>
     <loc>http://demidev.com/blog/</loc>
-    <lastmod>2017-05-24T10:27:16-05:00</lastmod>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,13 +40,19 @@
   
   <url>
     <loc>http://demidev.com/categories/ios/</loc>
-    <lastmod>2017-05-24T10:27:16-05:00</lastmod>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://demidev.com/categories/maps/</loc>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://demidev.com/categories/mobile/</loc>
-    <lastmod>2017-05-24T10:27:16-05:00</lastmod>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -62,7 +73,7 @@
   
   <url>
     <loc>http://demidev.com/</loc>
-    <lastmod>2017-05-24T10:27:16-05:00</lastmod>
+    <lastmod>2017-05-31T01:09:39-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.21-DEV" />
+        <meta name="generator" content="Hugo 0.44" />
         
     
         
@@ -31,7 +31,10 @@
             
         
 
-        
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="demidev"/>
+<meta name="twitter:description" content=""/>
+
         <meta property="og:title" content="demidev" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -39,7 +42,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-05-24T10:27:16-05:00"/>
+<meta property="og:updated_time" content="2017-05-31T01:09:39-04:00"/>
 
 
 
@@ -197,11 +200,11 @@
 
                 
                     <li>
-                        <a href="http://demidev.com/blog/smartway-for-ios-is-live/"><p>Smartway for iOS is live!</p></a>
+                        <a href="http://demidev.com/blog/adding-interative-views-to-google-maps/"><p>Adding Interative Views to Google Maps on iOS</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/"><p>Pitch Detection in iOS 4.x</p></a>
+                        <a href="http://demidev.com/blog/smartway-for-ios-is-live/"><p>Smartway for iOS is live!</p></a>
                     </li>
                 
             </ul>
@@ -218,10 +221,8 @@
     <header>
     <div class="title">
         
-            <h2><a href="http://demidev.com/blog/smartway-for-ios-is-live/">Smartway for iOS is live!</a></h2>
+            <h2><a href="http://demidev.com/blog/adding-interative-views-to-google-maps/">Adding Interative Views to Google Maps on iOS</a></h2>
         
-        
-            <p>View TDOT&#39;s live traffic camera feeds on your mobile evice</p>
         
     </div>
     <div class="meta">
@@ -230,11 +231,11 @@
         
 
         <time class="published"
-            datetime='2017-05-24'>
-            May 24, 2017</time>
+            datetime='2017-05-31'>
+            May 31, 2017</time>
         <span class="author">Demetri Miller</span>
         
-            <p>3 minute read</p>
+            <p>1 minute read</p>
         
         
     </div>
@@ -245,34 +246,7 @@
     
 
     <div id="content">
-        
-
-<h3 id="app-store-link">App Store Link</h3>
-
-<p>Just want the download link? Here ya go:
-<a href="https://itunes.apple.com/us/app/smartwaytn/id1131107222">https://itunes.apple.com/us/app/smartwaytn/id1131107222</a></p>
-
-<hr />
-
-<h3 id="backstory">Backstory</h3>
-
-<p>As a native Nashvillian, it&rsquo;s been a wild ride watching the city change. Nashville&rsquo;s population is <a href="http://www.tennessean.com/story/news/2017/03/28/new-data-nashville-region-still-growing-100-people-day/99733098/">growing by about 100 people a day</a>!</p>
-
-<p>With all these people has also come an increased load on the city&rsquo;s transportation infrastructure. When I was commuting to work every day I found myself getting stuck in traffic multiple times a week due to wrecks, stalled vehicles, or events in town. Google does a pretty good job with the traffic overlay on their maps app, but I found sometimes the information wasn&rsquo;t as up to date or as granular as I wanted. For a while now TDOT has provided cameras to view traffic, but until recently they were only stills that updated periodically (I think it was like once every 15 seconds or something).</p>
-
-<p>With TDOT&rsquo;s latest update the traffic cameras now support live streaming! I was so pumped the day I discovered they added that feature. The initial implementation of their desktop experience wasn&rsquo;t bad, but for someone going to the site every day to check the same subset of cameras it lacked some necessary features. I filed feature requests, but after 6 months of not seeing any changes I decided to build a mobile client for my personal use since the mobile web experience had become mildly infuriating.</p>
-
-<p>Like most software projects there were a few gotchas along the way (I&rsquo;ll probably chronicle those at some point in the future), but for the most part development was straightforward. Some of the features I knew I wanted were:</p>
-
-<ul>
-<li>The app saving wherever you are looking on the map so the next time you open it you don&rsquo;t have to find your location again.</li>
-<li>Quickly being able to go from cold launch of the app to viewing cameras.</li>
-<li>The app has a &ldquo;favorites&rdquo; feature to save cameras you&rsquo;re most interested in. Great feature for daily commuters. They can be viewed in list format so you don&rsquo;t have to click each camera individually like you do on the web.</li>
-</ul>
-
-<p>I never planned on making the app public. I did the bare minimum (design and feature-wise) to satisfy my needs. After showing a few friends though I received a lot of postiive feedback and others asking me if it was on the store. I figured I may as well polish it up and put it out there for others to use.</p>
-
-<p>So there you go! The SmartwayTN app is live and I&rsquo;d love to get your feedback. Next up I&rsquo;d love to get an Android version on the store using React Native, but we&rsquo;ll have to wait until I have a bit more time for that.</p>
+        <p>You wouldn&rsquo;t think it&rsquo;d be difficult, but adding an interactive view to Google Maps on iOS has some gotchas. Why? It turns out adding subviews</p>
 
     </div>
 
@@ -302,14 +276,16 @@
     
         <li><a href='/categories/mobile'>mobile</a></li>
     
+        <li><a href='/categories/maps'>maps</a></li>
+    
 </ul>
 
     </footer>
 </article>
 <ul class="actions pagination">
     
-        <li><a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/"
-                class="button big previous">Pitch Detection in iOS 4.x</a></li>
+        <li><a href="http://demidev.com/blog/smartway-for-ios-is-live/"
+                class="button big previous">Smartway for iOS is live!</a></li>
     
 
     
@@ -320,20 +296,25 @@
     
         <article class="post">
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'demidev';
-    var disqus_identifier = 'http:\/\/demidev.com\/blog\/smartway-for-ios-is-live\/';
-    var disqus_title = 'Smartway for iOS is live!';
-    var disqus_url = 'http:\/\/demidev.com\/blog\/smartway-for-ios-is-live\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "demidev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </article>
     
 
@@ -348,43 +329,43 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&text=Smartway%20for%20iOS%20is%20live%21&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f&text=Adding%20Interative%20Views%20to%20Google%20Maps%20on%20iOS&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live%21" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f&title=Adding%20Interative%20Views%20to%20Google%20Maps%20on%20iOS" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live%21" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f&title=Adding%20Interative%20Views%20to%20Google%20Maps%20on%20iOS" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f&title=Smartway%20for%20iOS%20is%20live%21" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f&title=Adding%20Interative%20Views%20to%20Google%20Maps%20on%20iOS" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Demetri%20Miller&body=http%3a%2f%2fdemidev.com%2fblog%2fsmartway-for-ios-is-live%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Demetri%20Miller&body=http%3a%2f%2fdemidev.com%2fblog%2fadding-interative-views-to-google-maps%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -489,13 +470,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://demidev.com/blog/smartway-for-ios-is-live/">Smartway for iOS is live!</a></h3>
+                                <h3><a href="http://demidev.com/blog/adding-interative-views-to-google-maps/">Adding Interative Views to Google Maps on iOS</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2017-05-24'>
-                                    May 24, 2017</time>
+                                    '2017-05-31'>
+                                    May 31, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -503,13 +484,13 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://demidev.com/blog/pitch-detection-in-ios-4.x/">Pitch Detection in iOS 4.x</a></h3>
+                                <h3><a href="http://demidev.com/blog/smartway-for-ios-is-live/">Smartway for iOS is live!</a></h3>
                                 
                                     
                                 
                                 <time class="published" datetime=
-                                    '2011-09-29'>
-                                    September 29, 2011</time>
+                                    '2017-05-24'>
+                                    May 24, 2017</time>
                             </header>
                         </article>
                     </li>
